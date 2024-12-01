@@ -1,0 +1,119 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Volunteer.master.cs" Inherits="Volunteer_Volunteer" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Helping Hands NGO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<!-- START PAGE SOURCE -->
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+        <img src="../images/logo.jpeg" height="55px" width="75px" align="left" />
+          <li ><a href="FrontPage.aspx">Home</a></li>
+          <li><a href="ListEvents.aspx">View Events</a></li>
+          <li><a href="MyEvents.aspx">My Event List</a></li>
+          <!--<li><a href="Mytasks.aspx">My Task List</a></li>-->
+          <li><a href="Logout.aspx">Logout</a></li>
+        </ul>
+        
+      </div>
+      <div class="clr"></div>
+      <img src="../images/FrontImage.jpg" width="970" height="260" alt="" /> </div>
+  </div>
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+         <form id="form1" runat="server">
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    
+    </form>
+        </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star"><span>Sidebar</span> Menu</h2>
+          <div class="clr"></div>
+          <ul class="sb_menu">
+            
+          <li ><a href="FrontPage.aspx">Home</a></li>
+          <li><a href="UpdateProfile.aspx">Update Profile</a></li>
+          <li><a href="UpdatePassword.aspx">Update Password</a></li>
+          <!--<li><a href="MyTasks.aspx">Deliver Donation</a></li>-->
+          <!-- <li><a href="EnrollinEvent.aspx">Participate in Event</a></li>-->
+           
+          <li><a href="Logout.aspx">Logout</a></li>
+          </ul>
+        </div>
+        <div class="gadget">
+          <h2 class="star"><span>Events</span></h2>
+            <p class="star">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                    SelectCommand="SELECT [EImage] FROM [Event]"></asp:SqlDataSource>
+                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" 
+                    RepeatColumns="2">
+                    <ItemTemplate>
+                        
+                        <asp:Image ID="EImageLabel" runat="server" ImageUrl='<%# Eval("Eimage") %>' Width="100px" Height="100px" ImageAlign="Middle" />
+                        
+<br />
+                    </ItemTemplate>
+                </asp:DataList>
+            </p>
+          <div class="clr"></div>
+          
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2>Wh<span>at is NGO?</span></h2>
+        <p>An NGO (non-governmental organisation) is a non-profit organisation that operates and functions independently from the government. 
+            NGOs are basically citizen based groups that are organised on the community, 
+            national as well as international levels in order to serve specific political or 
+            social issues prevalent in the area.
+</p> </div>
+      <div class="col c2">
+        <h2><span>Helping Hands NGO</span></h2>
+        <p>The Foundations objective is To Establish and maintain welfare and as such to 
+            render assistance to The poor marginalized Widow&#39;s Orphans Homeless Handicapped 
+            Street Children Aged, Patients with Cancer , Kidney Problem etc and Victim&#39;s of 
+            Disaster and Calamities </p>
+      </div>
+      <div class="col c3">
+        <h2><span>Contact</span></h2>
+        <p>Feel free to contact us @</p>
+        <p><a href="#" style="color: #293805">support@hhngo.com</a></p>
+        <p>+91 (02642) 2444-5677<br />
+          +91 (02642) 2444-5678</p>
+        <p>Address: 22, Balaji Offices, Station Road, Bharuch - Gujarat</p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">Copyright &copy; 2023 <a href="#">Helping Hands NGO</a> - All Rights Reserved</p>
+      <p class="rf">Designed by <a href="#">Developer Name</a></p>
+     
+    </div>
+  </div>
+</div>
+<!-- END PAGE SOURCE -->
+</body>
+</html>
+
